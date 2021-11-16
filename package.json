@@ -1,0 +1,53 @@
+{
+  "name": "ruhelec",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "ruh",
+  "license": "desc",
+  "description": "This is a experiment to learn electronJS",
+  "devDependencies": {
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "electron": "^15.3.1"
+  },
+  "private": true,
+  "scripts": {
+    "start": "electron-forge start",
+    "electron-import": "npx electron-forge import",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "ruhelec"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
